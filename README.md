@@ -1,6 +1,6 @@
 # CSC4202-G1-ProjectReport
 
-#1.0 Original Scenario
+## 1.0 Original Scenario
 
 Optimization of University Course Scheduling
 
@@ -21,7 +21,7 @@ advance.
 
 
 
-#2.0 Importance of Optimal Solution
+## 2.0 Importance of Optimal Solution
 
 Finding an optimal solution for the university course scheduling scenario is important for several reasons:
 
@@ -41,23 +41,23 @@ In summary, finding an optimal course schedule in the university course scheduli
 
 
 
-#3.0 Suitability of Algorithms As Solution Paradigm
+## 3.0 Suitability of Algorithms As Solution Paradigm
 
 Let's review the suitability of different solution paradigms for the course scheduling problem, considering sorting, Divide and Conquer (DAC), Dynamic Programming (DP), greedy algorithms, and graph algorithms.
 
-##3.1 Sorting
+3.1 Sorting
    - Strengths: Sorting can be useful for certain aspects of the course scheduling problem, such as ordering the courses based on prerequisites or sorting them by certain criteria like course credits or semester availability.
    - Weaknesses: Sorting alone cannot handle the full complexity of the course scheduling problem, as it doesn't consider prerequisites or credit constraints. It may require additional algorithms or techniques to ensure that the sorted schedule satisfies the constraints.
 
-##3.2 Divide and Conquer (DAC)
+3.2 Divide and Conquer (DAC)
    - Strengths: DAC could be used to break down the course scheduling problem into smaller subproblems, solving each subproblem independently, and then combining the solutions. This approach can be effective when dealing with complex dependency structures.
    - Weaknesses: DAC may not directly address the prerequisites or credit constraints, and additional steps would be needed to ensure the overall schedule satisfies the requirements. Handling the combination of solutions and maintaining consistency across subproblems can also be challenging.
 
-##3.3 Dynamic Programming (DP)
+3.3 Dynamic Programming (DP)
    - Strengths: DP can be useful when there are overlapping subproblems and optimal substructure properties. It could potentially handle the course scheduling problem by considering the dependencies and credits, building a schedule incrementally, and finding an optimal solution.
    - Weaknesses: DP can be computationally expensive for large input sizes, and it may require defining an appropriate state and recursive relationship that captures the course dependencies and credit constraints. It can also be challenging to handle real-time updates or changes to the schedule.
 
-##3.4 Greedy Algorithms
+3.4 Greedy Algorithms
    - Strengths: Greedy algorithms can provide simple and efficient solutions by making locally optimal choices at each step. In the course scheduling problem, a greedy approach could involve selecting the courses based on certain criteria, such as the number of prerequisites or credits.
    - Weaknesses: Greedy algorithms may not always guarantee an optimal global solution, especially when considering complex constraints like prerequisites and credit limits. The locally optimal choices made by the greedy algorithm may lead to suboptimal or infeasible schedules.
 
@@ -116,7 +116,7 @@ This is the example of implementation
 
 ![image](https://github.com/Ramesh260402/CSC4202-G1-ProjectReport/assets/86455045/40f0e400-73e0-4e9c-a0ac-808667f97ee2)
 
-4.0 Design The Algorithm
+## 4.0 Design The Algorithm
 
 4.1 Topological Sorting 
 
@@ -151,7 +151,7 @@ This is the example of implementation
 
 In terms of algorithm paradigm, the main part of the algorithm that involves recurrence is the hasCycle() method. It uses recursion to traverse the prerequisite courses and check for cycles. The recursion allows the algorithm to explore the dependencies in a depth-first manner.Regarding optimization, the algorithm could potentially benefit from memoization or caching techniques to avoid redundant calculations or lookups of course names. However, the given code does not incorporate any specific optimization function.Overall, the algorithm uses a recursive approach to detect cycles in course dependencies and determine if all courses can be scheduled without cyclic dependencies.
 
-5.0 Algorithm Analysis
+## 5.0 Algorithm Analysis
 
 5.1 Topological Sorting 
 
