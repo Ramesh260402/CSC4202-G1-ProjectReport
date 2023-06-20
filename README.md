@@ -52,6 +52,7 @@ Hence, we agree to choose the graph algorithms, specifically topological sorting
 ## 4. Topological Sorting 
 
 ![image](https://github.com/Ramesh260402/CSC4202-G1-ProjectReport/assets/86455045/7938d0dc-1f4e-407f-93c7-60114f7735bc)
+
 Perform the topological sorting using Kahn's algorithm. This part does not involve recurrence.
 -Initialize an empty list sorted_nodes to store the sorted nodes.
 -While the queue is not empty, dequeue a node from the front of the queue.
