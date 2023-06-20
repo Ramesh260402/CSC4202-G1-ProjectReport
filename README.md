@@ -1,5 +1,6 @@
 # CSC4202-G1-Project
 
+Optimization of University Course Scheduling
 
 ## 1. Introduction:
 Timetabling issues can occur in a range of industries, including healthcare, sports, transportation, and education. This project focuses on the university course scheduling issue, which is often experienced in colleges around the world. Manual scheduling results in conflicts and flaws, but computer scheduling can be used to remedy these issues. 
