@@ -84,6 +84,9 @@ ROLE OF TOPOLOGICAL SORTING IN COURSE SCHEDULING
 
 ## 8. Conclusion 
 -The optimization of university course scheduling is a crucial task that requires careful consideration of various factors 
+
 -Manual scheduling processes are prone to errors 
+
 -Graph algorithms, specifically topological sorting, provide a suitable solution paradigm for the course scheduling problem
+
 -Topological sorting ensures a valid order for course scheduling
