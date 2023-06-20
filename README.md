@@ -23,10 +23,6 @@ Focus: b, c & d
 ## 4. Topological Sorting (3 min) (ramesh)
 ![image](https://github.com/Ramesh260402/CSC4202-G1-ProjectReport/assets/86455045/7938d0dc-1f4e-407f-93c7-60114f7735bc)
 
-#Provide a detailed explanation of how topological sorting works,
-#emphasizing its ability to handle prerequisite dependencies efficiently. 
-#Discuss its relevance to the course scheduling problem and how it addresses the goals and constraints.
-
 ## 5. Implementation Overview: (3 min) (mugi/ syakila)
 
 def create_top_sort(self):
