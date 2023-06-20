@@ -1,9 +1,12 @@
 # CSC4202-G1-Project
 
 
-## 1. Introduction: (1 min) (ramesh)
-#very Brief overview of the university course scheduling problem scenario.
-#brief model development
+## 1. Introduction:
+Timetabling issues can occur in a range of industries, including healthcare, sports, transportation, and education. This project focuses on the university course scheduling issue, which is often experienced in colleges around the world. Manual scheduling results in conflicts and flaws, but computer scheduling can be used to remedy these issues. 
+
+The courses and their dependencies would normally be represented as a directed graph, which is the data type needed to construct the scenario using Kahn's approach of Topological Sorting. The graph would represent each course as a node, and the connections between courses as directed edges.
+
+In this case, creating a proper course plan that complies with credit requirements and prerequisites would be the target function. The courses should be set up such that students can advance through the programme without going over their allotted credits or breaking any prerequisites.
 
 
 ## 2. Problem Description: 
@@ -47,7 +50,16 @@ Hence, we agree to choose the graph algorithms, specifically topological sorting
 
 
 ## 4. Topological Sorting 
+
 ![image](https://github.com/Ramesh260402/CSC4202-G1-ProjectReport/assets/86455045/7938d0dc-1f4e-407f-93c7-60114f7735bc)
+Perform the topological sorting using Kahn's algorithm. This part does not involve recurrence.
+-Initialize an empty list sorted_nodes to store the sorted nodes.
+-While the queue is not empty, dequeue a node from the front of the queue.
+-Append the dequeued node to the sorted_nodes list.
+-Iterate over the neighbors of the dequeued node:
+---Decrement their in-degree in the in_degree dictionary.
+---If the in-degree of a neighbor becomes 0, enqueue it into the queue
+
 
 ## 5. Implementation Overview: 
 
@@ -104,7 +116,13 @@ ROLE OF TOPOLOGICAL SORTING IN COURSE SCHEDULING
 
 refer "video3026395860_CqiOUi7s.mp4"
 
-## 7. Time complexity: (3) (qistina/ mugi)
+## 7. Time complexity:
+
+This algorithm ensures the correctness of the course scheduling process by following these steps:
+1.	Creating the graph: The algorithm constructs a directed graph by iterating through the courses and their prerequisites. It accurately represents the dependencies between courses.
+2.	Topological sorting: Using Kahn's algorithm, the algorithm performs topological sorting on the course graph. It calculates the in-degree of each node, enqueues nodes with an in-degree of 0, and processes the queue to generate a valid order of courses to satisfy prerequisites.
+3.	Creating the schedule: The algorithm generates a course schedule based on the sorted graph. It considers the prerequisites and credits for each course, assigns courses to semesters, and creates a schedule representing years and semesters.
+Overall, this algorithm successfully creates the course graph, performs topological sorting, and generates a valid course schedule considering prerequisites, desired credits, and starting semester.
 
 Time Complexity
 
