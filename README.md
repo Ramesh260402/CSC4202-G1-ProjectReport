@@ -32,11 +32,53 @@ e. Student preferences
 #Discuss its relevance to the course scheduling problem and how it addresses the goals and constraints.
 
 ## 5. Implementation Overview: (3 min) (mugi/ syakila)
-#said la how we tried implementing using dfs of topological algorithm juga
-#then said we decide to choose the khan’s/ dag approach bc its more suitable for prerequisites problem
-#show code and especially focuses on part that have topological sorting
-#Briefly describe the implementation approach for the topological sorting algorithm.
-#Highlight the data structures and any additional techniques used to handle credit constraints and other requirements.
+
+def create_top_sort(self):
+        # Perform topological sorting using Kahn's algorithm
+        in_degree = {node: 0 for node in self.course_graph.nodes}
+        queue = []
+
+        # Calculate in-degree for each node
+        for node in self.course_graph.nodes:
+            for neighbor in self.course_graph.neighbors(node):
+                in_degree[neighbor] += 1
+
+        # Enqueue nodes with in-degree 0
+        for node in in_degree:
+            if in_degree[node] == 0:
+                queue.append(node)
+
+        # Perform topological sorting
+        sorted_nodes = []
+        while queue:
+            node = queue.pop(0)
+            sorted_nodes.append(node)
+
+            for neighbor in self.course_graph.neighbors(node):
+                in_degree[neighbor] -= 1
+                if in_degree[neighbor] == 0:
+                    queue.append(neighbor)
+
+        # Create a new graph with sorted nodes and edges
+        new_graph = nx.DiGraph()
+        new_graph.add_nodes_from(sorted_nodes)
+        new_graph.add_edges_from(self.course_graph.edges())
+
+        # Copy node data from the original graph to the sorted graph
+        nodes = new_graph.nodes
+        nodes_old = self.course_graph.nodes
+        for course in nodes:
+            nodes[course]["data"] = nodes_old[course]["data"]
+
+        self.top_graph = new_graph
+
+
+ROLE OF TOPOLOGICAL SORTING IN COURSE SCHEDULING
+1. Resolving dependencies
+2. Establishing a feasible schedule
+3. Handling cyclic dependencies
+4. Generating a sorted graph
+
 
 ## 6. Code Demonstration: (1 min?) (mugi/ syakila)
 #Present the code demonstration (video or real time??)
