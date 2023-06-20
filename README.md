@@ -49,9 +49,11 @@ Hence, we agree to choose the graph algorithms, specifically topological sorting
 ## 4. Topological Sorting 
 ![image](https://github.com/Ramesh260402/CSC4202-G1-ProjectReport/assets/86455045/7938d0dc-1f4e-407f-93c7-60114f7735bc)
 
-## 5. Implementation Overview: (3 min) (mugi/ syakila)
+## 5. Implementation Overview: 
+
 
 def create_top_sort(self):
+
         # Perform topological sorting using Kahn's algorithm
         in_degree = {node: 0 for node in self.course_graph.nodes}
         queue = []
