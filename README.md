@@ -8,11 +8,11 @@
 
 ## 2. Problem Description: 
 
-a. Time conflicts
-b. Prerequisite dependencies
-c. Course availability (capacity)
-d. Credit constraints 
-e. Student preferences
+- a. Time conflicts
+- b. Prerequisite dependencies
+- c. Course availability (capacity)
+- d. Credit constraints 
+- e. Student preferences
 
 Focus: b, c & d
 
@@ -115,10 +115,7 @@ Time Complexity
 In summary, the algorithm has a time complexity of O(|V| + |E|), where |V| is the number of courses and |E| is the number of prerequisites. It correctly creates the course graph, performs topological sorting, and generates a valid course schedule considering prerequisites, desired credits, and the starting semester.
 
 ## 8. Conclusion 
--The optimization of university course scheduling is a crucial task that requires careful consideration of various factors 
-
--Manual scheduling processes are prone to errors 
-
--Graph algorithms, specifically topological sorting, provide a suitable solution paradigm for the course scheduling problem
-
--Topological sorting ensures a valid order for course scheduling
+- The optimization of university course scheduling is a crucial task that requires careful consideration of various factors 
+- Manual scheduling processes are prone to errors 
+- Graph algorithms, specifically topological sorting, provide a suitable solution paradigm for the course scheduling problem
+- Topological sorting ensures a valid order for course scheduling
