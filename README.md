@@ -7,18 +7,14 @@
 
 
 ## 2. Problem Description:  (1 min) (syakila)
-#Explain the different sub-problems of university course scheduling, emphasizing which we choose
 
 a. Time conflicts
-b.  [Topological] Prerequisite dependencies
-c.  [Knapsack] Course availability (capacity)
-d. [Topological] Credit constraints 
+b. Prerequisite dependencies
+c. Course availability (capacity)
+d. Credit constraints 
 e. Student preferences
 
-#mention how we focus on these three 
-#mention how we tried doing c cuz to implement this we just use knapsack which is in syllabus but we not satisfied cuz a schedule prioritize prerequisites and credit constraints more
-#next we decide to do b because it suits our scenario the most (with add ons of c)
-
+Focus: b, c & d
 
 ## 3. Algorithm Selection: (2 min) (qistina)
 #Discuss the various solution paradigms, such as sorting, divide and conquer, dynamic programming, greedy algorithms, and graph algorithms. 
