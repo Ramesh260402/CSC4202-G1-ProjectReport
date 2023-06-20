@@ -127,13 +127,13 @@ Overall, this algorithm successfully creates the course graph, performs topologi
 
 Time Complexity
 
-1. Creating the graph: The code iterates over the course input and prerequisites, adding nodes and edges to the graph. This step takes O(|V| + |E|) time, where |V| is the number of courses and |E| is the number of prerequisites.
+1. Creating the graph: The code iterates over the course input and prerequisites, adding nodes and edges to the graph. This step takes O(V + E) time, where V is the number of courses and E is the number of prerequisites.
 
-2. Topological sorting: The topological sorting algorithm used is Kahn's algorithm, which has a time complexity of O(|V| + |E|). It involves calculating in-degrees, enqueuing nodes with in-degree 0, and processing nodes in the queue to update in-degrees and generate the sorted order.
+2. Topological sorting: The topological sorting algorithm used is Kahn's algorithm, which has a time complexity of O(V + E). It involves calculating in-degrees, enqueuing nodes with in-degree 0, and processing nodes in the queue to update in-degrees and generate the sorted order.
 
 3. Creating the schedule: The code iterates over the sorted nodes and performs various operations based on the course data and constraints. In the worst case, it may iterate over all the courses and perform checks for each prerequisite and semester. Thus, the time complexity is dependent on the number of courses and their attributes.
 
-In summary, the algorithm has a time complexity of O(|V| + |E|), where |V| is the number of courses and |E| is the number of prerequisites. It correctly creates the course graph, performs topological sorting, and generates a valid course schedule considering prerequisites, desired credits, and the starting semester.
+In summary, the algorithm has a time complexity of O(V + E), where V is the number of courses and E is the number of prerequisites. It correctly creates the course graph, performs topological sorting, and generates a valid course schedule considering prerequisites, desired credits, and the starting semester.
 
 ## 8. Conclusion 
 - The optimization of university course scheduling is a crucial task that requires careful consideration of various factors 
