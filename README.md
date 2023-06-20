@@ -32,7 +32,7 @@ Focus: b, c & d
 - Weaknesses: DP might be challenging to handle real-time updates or changes to the schedule.
 
 
-  4. Greedy Algorithms
+ 4. Greedy Algorithms
 - Strengths: Greedy algorithms can provide simple and efficient solutions by making locally optimal choices at each step. In the course scheduling problem, a greedy approach could involve selecting the courses based on certain criteria, such as the number of prerequisites or credits.
 - Weaknesses: Greedy algorithms may not always guarantee an optimal global solution, especially when considering complex constraints like prerequisites and credit limits. The locally optimal choices made by the greedy algorithm may lead to suboptimal or infeasible schedules.
 
@@ -112,10 +112,6 @@ Time Complexity
 2. Topological sorting: The topological sorting algorithm used is Kahn's algorithm, which has a time complexity of O(|V| + |E|). It involves calculating in-degrees, enqueuing nodes with in-degree 0, and processing nodes in the queue to update in-degrees and generate the sorted order.
 
 3. Creating the schedule: The code iterates over the sorted nodes and performs various operations based on the course data and constraints. In the worst case, it may iterate over all the courses and perform checks for each prerequisite and semester. Thus, the time complexity is dependent on the number of courses and their attributes.
-
-Therefore, the overall time complexity of the algorithm is O(|V| + |E|), where |V| is the number of courses and |E| is the number of prerequisites.
-
-Note: The space complexity of the algorithm is O(|V| + |E|) as it stores the course graph, topologically sorted graph, and the course schedule.
 
 In summary, the algorithm has a time complexity of O(|V| + |E|), where |V| is the number of courses and |E| is the number of prerequisites. It correctly creates the course graph, performs topological sorting, and generates a valid course schedule considering prerequisites, desired credits, and the starting semester.
 
