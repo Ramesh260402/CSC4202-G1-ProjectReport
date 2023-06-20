@@ -6,7 +6,7 @@
 #brief model development
 
 
-## 2. Problem Description:  (1 min) (syakila)
+## 2. Problem Description: 
 
 a. Time conflicts
 b. Prerequisite dependencies
@@ -20,7 +20,7 @@ Focus: b, c & d
 #Discuss the various solution paradigms, such as sorting, divide and conquer, dynamic programming, greedy algorithms, and graph algorithms. 
 #justify why you chose the graph algorithm (topological sorting) as the suitable solution.
 
-## 4. Topological Sorting (3 min) (ramesh)
+## 4. Topological Sorting 
 ![image](https://github.com/Ramesh260402/CSC4202-G1-ProjectReport/assets/86455045/7938d0dc-1f4e-407f-93c7-60114f7735bc)
 
 ## 5. Implementation Overview: (3 min) (mugi/ syakila)
