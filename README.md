@@ -99,9 +99,8 @@ ROLE OF TOPOLOGICAL SORTING IN COURSE SCHEDULING
 
 
 ## 6. Code Demonstration: (1 min?) (mugi/ syakila)
-#Present the code demonstration (video or real time??)
-#also show how the java one works 
-#Use visual aids, such as code snippets, diagrams, or slides, to enhance understanding. Keep the demonstration concise and focused on the key aspects of the algorithm.
+
+video3026395860_CqiOUi7s.mp4
 
 ## 7. Time complexity: (3) (qistina/ mugi)
 
