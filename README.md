@@ -98,9 +98,9 @@ ROLE OF TOPOLOGICAL SORTING IN COURSE SCHEDULING
 4. Generating a sorted graph
 
 
-## 6. Code Demonstration: (1 min?) (mugi/ syakila)
+## 6. Code Demonstration: 
 
-video3026395860_CqiOUi7s.mp4
+refer "video3026395860_CqiOUi7s.mp4"
 
 ## 7. Time complexity: (3) (qistina/ mugi)
 
