@@ -1,143 +1,48 @@
-# CSC4202-G1-Project
+# CSC4202 Group 1 Project Report Repository
 
-Optimization of University Course Scheduling
+Welcome to the CSC4202 Group 1 Project Report repository! This repository contains the project report and related resources for our CSC4202 course project.
 
-## 1. Introduction:
-Timetabling issues can occur in a range of industries, including healthcare, sports, transportation, and education. This project focuses on the university course scheduling issue, which is often experienced in colleges around the world. Manual scheduling results in conflicts and flaws, but computer scheduling can be used to remedy these issues. 
+## Project Description
 
-The courses and their dependencies would normally be represented as a directed graph, which is the data type needed to construct the scenario using Kahn's approach of Topological Sorting. The graph would represent each course as a node, and the connections between courses as directed edges.
+Our project focuses on course scheduling problem among university students. We aim to create a schedule that will meets credit constraints and prerequisites dependencies. Throughout the project, we have implemented various techniques, algorithms, and methodologies such as Implementing Topological Sorting using Python and Java to create a schedule that will meets credit constraints and prerequisites dependencies and implements dynamic programming for seat allocation problem (class capacity).
 
-In this case, creating a proper course plan that complies with credit requirements and prerequisites would be the target function. The courses should be set up such that students can advance through the programme without going over their allotted credits or breaking any prerequisites.
+## Repository Structure
 
+The repository is organized as follows:
 
-## 2. Problem Description: 
+- **`/Topological Sorting Python`**: This directory contains all the source code and scripts used for the project using Python. It is the main implementation of the project. 
 
-- a. Time conflicts
-- b. Prerequisite dependencies
-- c. Course availability (capacity)
-- d. Credit constraints 
-- e. Student preferences
+- **`/Topological Sorting Python`**: This directory contains all the source code and scripts used for the project using Java.
 
-Focus: b, c & d
+- **`/CSC4202_GroupProject_Report`**: This directory contains the project report in PDF format. The report provides a detailed analysis of our project, including [outline the key sections of the report, such as introduction, results, conclusion and more].
 
-## 3. Algorithm Selection: 
-  1. Sorting 
-- Strengths: Sorting can be useful for certain aspects of the course scheduling problem, such as ordering the courses based on prerequisites or sorting them by certain criteria like course credits or semester availability.
-- Weaknesses: Sorting alone cannot handle the full complexity of the course scheduling problem, as it doesn't consider prerequisites or credit constraints. 
+- **`/demonstration`**: This directory contains the demonstration video of the project (Python and Java).
 
 
- 2. Divide and Conquer (DAC)
-- Strengths: DAC could be used to break down the course scheduling problem into smaller subproblems, solving each subproblem independently, and then combining the solutions. This approach can be effective when dealing with complex dependency structures.
-- Weaknesses: DAC may not directly address the prerequisites or credit constraints, and additional steps would be needed to ensure the overall schedule satisfies the requirements. 
+## Getting Started
 
+To get started with our project, please follow these steps:
 
- 3. Dynamic Programming (DP)
-- Strengths: DP can be useful when there are overlapping subproblems and optimal substructure properties. It could potentially handle the course scheduling problem by considering the dependencies and credits, building a schedule incrementally, and finding an optimal solution.
-- Weaknesses: DP might be challenging to handle real-time updates or changes to the schedule.
+1. Clone the repository using the following command:
 
+   ```
+   git clone https://github.com/Ramesh260402/CSC4202-G1-ProjectReport.git
+   ```
 
- 4. Greedy Algorithms
-- Strengths: Greedy algorithms can provide simple and efficient solutions by making locally optimal choices at each step. In the course scheduling problem, a greedy approach could involve selecting the courses based on certain criteria, such as the number of prerequisites or credits.
-- Weaknesses: Greedy algorithms may not always guarantee an optimal global solution, especially when considering complex constraints like prerequisites and credit limits. The locally optimal choices made by the greedy algorithm may lead to suboptimal or infeasible schedules.
+2. Navigate to the cloned directory:
 
+   ```
+   cd CSC4202-G1-ProjectReport
+   ```
 
- 5.  Graph Algorithms
-- Strengths: Graph algorithms, such as topological sorting or shortest path algorithms, can directly address the dependencies and prerequisites in the course scheduling problem. They provide a natural representation for modeling the relationships between courses and can help in building a schedule that satisfies the constraints.
-- Weaknesses: Graph algorithms may not inherently consider credit constraints, and additional steps would be required to incorporate them into the scheduling process. They may also require careful consideration of edge cases and exceptional scenarios to ensure the correctness and efficiency of the schedule.
+## License
 
-Hence, we agree to choose the graph algorithms, specifically topological sorting, as the solution paradigm for our Course Scheduling problem. Topological sorting is well-suited for this problem because it effectively handles prerequisites and credit constraints.
+This project is licensed under the [MIT License](LICENSE). Feel free to explore, modify, and use the code as per the license terms.
 
+## Contact
 
+If you have any questions or suggestions regarding the project, please feel free to reach out to us:
 
+- [Nor Syakila Binti Salim](norsyakila9@gmail.com)
 
-## 4. Topological Sorting 
-
-![image](https://github.com/Ramesh260402/CSC4202-G1-ProjectReport/assets/86455045/7938d0dc-1f4e-407f-93c7-60114f7735bc)
-
-Perform the topological sorting using Kahn's algorithm. This part does not involve recurrence.
--Initialize an empty list sorted_nodes to store the sorted nodes.
--While the queue is not empty, dequeue a node from the front of the queue.
--Append the dequeued node to the sorted_nodes list.
--Iterate over the neighbors of the dequeued node:
----Decrement their in-degree in the in_degree dictionary.
----If the in-degree of a neighbor becomes 0, enqueue it into the queue
-
-
-## 5. Implementation Overview: 
-
-
-def create_top_sort(self):
-
-        # Perform topological sorting using Kahn's algorithm
-        in_degree = {node: 0 for node in self.course_graph.nodes}
-        queue = []
-
-        # Calculate in-degree for each node
-        for node in self.course_graph.nodes:
-            for neighbor in self.course_graph.neighbors(node):
-                in_degree[neighbor] += 1
-
-        # Enqueue nodes with in-degree 0
-        for node in in_degree:
-            if in_degree[node] == 0:
-                queue.append(node)
-
-        # Perform topological sorting
-        sorted_nodes = []
-        while queue:
-            node = queue.pop(0)
-            sorted_nodes.append(node)
-
-            for neighbor in self.course_graph.neighbors(node):
-                in_degree[neighbor] -= 1
-                if in_degree[neighbor] == 0:
-                    queue.append(neighbor)
-
-        # Create a new graph with sorted nodes and edges
-        new_graph = nx.DiGraph()
-        new_graph.add_nodes_from(sorted_nodes)
-        new_graph.add_edges_from(self.course_graph.edges())
-
-        # Copy node data from the original graph to the sorted graph
-        nodes = new_graph.nodes
-        nodes_old = self.course_graph.nodes
-        for course in nodes:
-            nodes[course]["data"] = nodes_old[course]["data"]
-
-        self.top_graph = new_graph
-
-
-ROLE OF TOPOLOGICAL SORTING IN COURSE SCHEDULING
-1. Resolving dependencies
-2. Establishing a feasible schedule
-3. Handling cyclic dependencies
-4. Generating a sorted graph
-
-
-## 6. Code Demonstration: 
-
-refer "video3026395860_CqiOUi7s.mp4"
-
-## 7. Time complexity:
-
-This algorithm ensures the correctness of the course scheduling process by following these steps:
-1.	Creating the graph: The algorithm constructs a directed graph by iterating through the courses and their prerequisites. It accurately represents the dependencies between courses.
-2.	Topological sorting: Using Kahn's algorithm, the algorithm performs topological sorting on the course graph. It calculates the in-degree of each node, enqueues nodes with an in-degree of 0, and processes the queue to generate a valid order of courses to satisfy prerequisites.
-3.	Creating the schedule: The algorithm generates a course schedule based on the sorted graph. It considers the prerequisites and credits for each course, assigns courses to semesters, and creates a schedule representing years and semesters.
-Overall, this algorithm successfully creates the course graph, performs topological sorting, and generates a valid course schedule considering prerequisites, desired credits, and starting semester.
-
-Time Complexity
-
-1. Creating the graph: The code iterates over the course input and prerequisites, adding nodes and edges to the graph. This step takes O(V + E) time, where V is the number of courses and E is the number of prerequisites.
-
-2. Topological sorting: The topological sorting algorithm used is Kahn's algorithm, which has a time complexity of O(V + E). It involves calculating in-degrees, enqueuing nodes with in-degree 0, and processing nodes in the queue to update in-degrees and generate the sorted order.
-
-3. Creating the schedule: The code iterates over the sorted nodes and performs various operations based on the course data and constraints. In the worst case, it may iterate over all the courses and perform checks for each prerequisite and semester. Thus, the time complexity is dependent on the number of courses and their attributes.
-
-In summary, the algorithm has a time complexity of O(V + E), where V is the number of courses and E is the number of prerequisites. It correctly creates the course graph, performs topological sorting, and generates a valid course schedule considering prerequisites, desired credits, and the starting semester.
-
-## 8. Conclusion 
-- The optimization of university course scheduling is a crucial task that requires careful consideration of various factors 
-- Manual scheduling processes are prone to errors 
-- Graph algorithms, specifically topological sorting, provide a suitable solution paradigm for the course scheduling problem
-- Topological sorting ensures a valid order for course scheduling
+Thank you for your interest in our CSC4202 Group 1 Project Report repository! We hope you find it informative and useful.
