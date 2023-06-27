@@ -1,8 +1,4 @@
-#  Title:		Csv reader implementation
-#  Purpose:     This class allows the major csv files to be read and processed into a usable format for
-#                   the rest of the program.
-# 
-#  TC:          O(n^3)
+
 
 import csv
 from pathlib import Path
@@ -54,7 +50,7 @@ class Reader:
 
             for semester in attributes[3]:
                 if semester == "" or not semester.isdigit() or int(semester) not in (1, 2):
-                    self.valid_format = [False, f'Error on line {line + 1}, incorrect quarter format: use numbers 1 or 2!']  # Incorrect quarter format
+                    self.valid_format = [False, f'Error on line {line + 1}, incorrect semester format: use numbers 1 or 2!']  # Incorrect semester format
                     return
 
             line += 1

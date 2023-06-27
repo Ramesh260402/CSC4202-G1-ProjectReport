@@ -1,8 +1,4 @@
-#  Title:		Program driver
-#  Purpose:     The driver of the overall program, including the UI. It takes in the user input, and 
-#                   uses the other classes to execute their request.
-# 
-#  TC:          O(n^3), obtained from the highest time complexity of the classes it invokes.
+
 import tkinter as tk
 from tkinter import messagebox
 from graph import Graph as g
@@ -22,8 +18,8 @@ def check_valid(credits, start_sem):
         return False
 
     # Checks to make sure that the input for start_sem is a number
-    if not start_sem.isnumeric() and start_sem != '':
-        message = "Invalid input. Please enter a number from 1 - 2"
+    if not start_sem.isdigit() and start_sem != '':
+        message = "Invalid input. Please enter a positive integer"
         messagebox.showerror("Error", message)
         return False
     

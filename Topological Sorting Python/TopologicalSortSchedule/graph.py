@@ -1,8 +1,4 @@
-#  Title:		Graph and schedule implementation
-#  Purpose:     This class creates a graph from the processed csv input. It is then sorted using a topological sort,
-#                   eventually being used to create the class schedule.
-# 
-#  TC:          O(n^3)
+
 import networkx as nx
 import matplotlib.pyplot as plt
 import re
@@ -82,13 +78,13 @@ class Graph:
     def create_schedule(self, desired_credits, start_sem):
         schedule = {}
         year = {"Semester 1": [], "Semester 2": []}
-        creds_per_q = [0, 0, 0]
+        creds_per_q = [0, 0]
         curr_year = 1
         i = 0
 
-        # Validate and set the desired credits and starting semester
-        desired_credits = int(desired_credits) if desired_credits.isdigit() and int(desired_credits) in range(12, 19) else 18
-        start_sem = int(start_sem) if start_sem.isdigit() and int(start_sem) in range(1, 8) else 1
+    # Validate and set the desired credits and starting semester
+        desired_credits = int(desired_credits) if desired_credits.isdigit() and int(desired_credits) in range(12, 20) else 18
+        start_sem = int(start_sem) if start_sem.isdigit() and int(start_sem) in range(1, 2) else 1
 
         nodes = self.top_graph.nodes()
         list_nodes = list(nodes)
@@ -97,7 +93,7 @@ class Graph:
             course = list_nodes[i]
             course_name, credits, prerequisites, semesters_offered = nodes[course]['data']
             credits = int(credits)
-
+    
             course_year = int(re.sub('\D', '', course)[0]) - 1
 
             good_to_go = True
@@ -107,14 +103,13 @@ class Graph:
                     for option in optionals:
                         if option in list_nodes:
                             good_to_go = False
-                        else:
-                            good_to_go = True
-                            break
+                            break  # Break the loop if any option is in list_nodes
                 else:
                     if prerequisite in list_nodes:
                         good_to_go = False
+                        break  # Break the loop if the prerequisite is in list_nodes
 
-            if (not good_to_go) and prerequisites[0] != '' or curr_year < course_year:
+            if not good_to_go or (prerequisites[0] != '' and any(prerequisite in year["Semester 1"] for prerequisite in prerequisites)):
                 i += 1
             else:
                 for quarter in year:
@@ -132,11 +127,11 @@ class Graph:
                 else:
                     i += 1
 
-            if i >= len(list_nodes) or sum(creds_per_q) == desired_credits * 3:
+            if i >= len(list_nodes) or sum(creds_per_q) == desired_credits * 2:
                 i = 0
                 schedule["Year " + str(curr_year)] = year
                 curr_year += 1
-                creds_per_q = [0, 0, 0]
+                creds_per_q = [0, 0]
                 year = {"Semester 1": [], "Semester 2": []}
 
         return schedule

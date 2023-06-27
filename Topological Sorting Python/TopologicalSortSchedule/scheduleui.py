@@ -1,9 +1,4 @@
-#  Title:		Visualize graph implementation
-#  Purpose:     Creates a visual of the course schedule that is generated in graph.py. 
-#                   It adapts for the starting quarter and credit limit, and shows all the courses, along with
-#                   their pre-reqs in a quarter separated fashion.
-# 
-#  TC:          O(n^3)
+
 import matplotlib.pyplot as plt
 from reader import Reader
 
